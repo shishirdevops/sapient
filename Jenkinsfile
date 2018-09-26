@@ -1,6 +1,7 @@
 node{
      
      stage('login to swarm node')
+     
           {
      sh "ssh jenkins@swarmnode"
           }
@@ -33,7 +34,7 @@ stage('Pull Docker Image'){
     //}
   }
    stage('Run Container on Server'){
-     def dockerRun = "docker run -p 5098:8080 -d --name my-app shishir91/pandey:${artifact}"
+     def dockerRun = "docker run -p 8080:8080 -d --name my-app shishir91/pandey:${artifact}"
      sh "${dockerRun}"
      }
    
