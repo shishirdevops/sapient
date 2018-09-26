@@ -5,6 +5,7 @@ pipeline{
 	stages{
    stage('SCM Checkout'){
 	   steps{
+		   cleanWs()
        git branch: 'integration', url: 'https://github.com/shishirdevops/sapient.git'    
 	   }       }
 
