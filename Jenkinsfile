@@ -1,5 +1,11 @@
 node{
+     
+     stage('login to swarm node')
+          {
+     sh "ssh jenkins@swarmnode"
+          }
 
+     
 stage('Pull Docker Image'){
      withCredentials([string(credentialsId: 'shishir91', variable: 'dockerHubPwd')]) {
         sh "docker login -u shishir91 -p ${dockerHubPwd}"
