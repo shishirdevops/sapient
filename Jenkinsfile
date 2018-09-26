@@ -5,12 +5,12 @@ node{
    }
 
 	stage ("Build image") {
-            steps {
-                echo 'Starting to build docker image'
-                script{
+            //steps {
+                   script{
+	            echo 'Starting to build docker image'
                     sh 'docker build -t shishir91/pandey:Int/${env.BUILD_ID} .'
                     
 					}
-            }
+           // }
         }
   }
