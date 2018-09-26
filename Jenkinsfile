@@ -4,8 +4,9 @@ pipeline{
 	
 	stages{
    stage('SCM Checkout'){
+	   steps{
        git branch: 'integration', url: 'https://github.com/shishirdevops/sapient.git'    
-                        }
+	   }       }
 
 	stage ('Build image') {
             steps {
