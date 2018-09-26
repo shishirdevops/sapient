@@ -2,9 +2,9 @@ pipeline{
 	stages{
    stage('SCM Checkout'){
        git branch: 'integration', url: 'https://github.com/shishirdevops/sapient.git'    
-   }
+                        }
 
-	stage ("Build image") {
+	stage ('Build image') {
             steps {
                 echo 'Starting to build docker image'
                 script{
