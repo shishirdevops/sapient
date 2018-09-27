@@ -62,9 +62,11 @@ stage('Pull Docker Image'){
       }
        }
   }
-   stage('Run Container on Server'){
-       steps{ def dockerRun = "docker run -p 5098:8080 -d --name my-app shishir91/pandey:${env.BUILD_ID}"
-     sh "${dockerRun}"
+   stage('Run Container on Server with service and replica'){
+       steps{ 
+	      sh "docker service create --replicas 2 -p 5098:8080 --name my-app shishir91/pandey:${env.BUILD_ID}"
+	       //def dockerRun = "docker run -p 5098:8080 -d --name my-app shishir91/pandey:${env.BUILD_ID}"
+     //sh "${dockerRun}"
             } }
 stage('test run of container')
 {
